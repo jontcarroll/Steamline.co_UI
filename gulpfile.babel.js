@@ -22,7 +22,7 @@ const srcPaths = {
 	styles: 'src/styles/',
 	js: 'src/js/',
 	fonts: 'src/fonts/',
-	images: 'src/images/',
+	images: 'src/img/',
 	tags: 'src/tags/'
 };
 const viewsPath = 'views/';
@@ -139,7 +139,7 @@ gulp.task('images', () => {
       // as hooks for embedding and styling
       svgoPlugins: [{cleanupIDs: false}]
     }))
-    .pipe(gulp.dest(`${outputPath}images`));
+    .pipe(gulp.dest(`${outputPath}img`));
 });
 
 /**

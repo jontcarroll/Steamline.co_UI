@@ -86,12 +86,6 @@
           </div>
         </li>
       </ul>
-      <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <button class="navbar-toggler aside-menu-toggler d-lg-none" type="button" data-toggle="aside-menu-show">
-        <span class="navbar-toggler-icon"></span>
-      </button>
     </header>
 
 
