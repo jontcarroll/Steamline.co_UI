@@ -1,12 +1,4 @@
-# Dynamicbuilder.admin
-
-Dynamic Builder rebuild / Workflow tool
-
-## Project Server URLs
-dev -
-https://www.dynamicbuilder.epandcompany.com.dev.epqa.us/
-qa -
-https://www.dynamicbuilder.epandcompany.com.qa.epqa.us/
+# Steamline.co
 
 ## Prerequisites
 - Node version: 9.11.1
@@ -18,4 +10,5 @@ https://www.dynamicbuilder.epandcompany.com.qa.epqa.us/
 - Run NPM install
 
 ## Development
+- Run `nodemon app.js`
 - Run `gulp dev`
