@@ -1,0 +1,21 @@
+{
+  "rules": {
+    "color-no-invalid-hex": true,
+    "color-hex-case": "lower",
+    "color-named": "never",
+    "color-hex-length": "long",
+    "comment-empty-line-before": [
+      "always", {
+        "ignore": ["stylelint-commands", "after-comment"]
+      }
+    ],
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-no-redundant-longhand-properties": true,
+    "no-extra-semicolons": true,
+    "block-closing-brace-newline-after": "always-multi-line",
+    "block-closing-brace-newline-before": "always",
+    "rule-empty-line-before": "always"
+  }
+}

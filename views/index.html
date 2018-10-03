@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+
+<game-finder-app></game-finder-app>
+
+{% endblock %}
+
+{% block scripts_bottom %}
+  <script src="/js/common.js?v={{ appVersion }}"></script>
+  <script src="/js/game-finder.js?v={{ appVersion }}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var gameFinderApp = new GameFinderApp(JSON.parse('{{ apiPaths|safe }}'));
+    });
+  </script>
+{% endblock %}

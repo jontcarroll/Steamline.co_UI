@@ -1,0 +1,16 @@
+{% extends "html_boiler_plate.html" %}
+
+{% block body %}
+  <login-form></login-form>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/riot@3.9/riot.min.js"></script>
+  <script src="/js/common.js?v={{ appVersion }}"></script>
+  <script src="/js/login-form.js?v={{ appVersion }}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var loginForm = new LoginForm(JSON.parse('{{ apiPaths|safe }}'), '{{ token }}');
+    });
+  </script>
+{% endblock %}
