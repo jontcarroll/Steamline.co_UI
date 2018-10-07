@@ -68,6 +68,11 @@ app.get('/', (req, res) => {
     res.render('index.html', vars);
 });
 
+app.get('/login', (req, res) => {
+  vars = getBaseVars();
+  res.render('login.html', vars);
+});
+
 /* app.get('/login', (req, res) => {
     const token = req.query.token;
     vars = getBaseVars();
@@ -75,27 +80,7 @@ app.get('/', (req, res) => {
     res.render('login.html', vars);
 });
 
-
-app.get('/formdesigner/:formId', (req, res) => {
-    vars = getBaseVars();
-    vars.formId = req.params.formId;
-    vars.currentRouteKey = 'form-designer';
-    res.render('form_designer.html', vars);
-});
-
-app.get('/workflows', (req, res) => {
-    vars = getBaseVars();
-    vars.currentRouteKey = 'workflow-designer';
-    res.render('workflow_index.html', vars);
-});
-
-app.get('/workflows/designer', (req, res) => {
-    vars = getBaseVars();
-    vars.workflowId = null;
-    vars.currentRouteKey = 'workflow-designer';
-    res.render('workflow_designer.html', vars);
-}); */
-
+\
 function forwardApi(req, res) {
   console.log(`fowarding auth traffic to ${apiUrl}`);
   if (isDevelopment) {

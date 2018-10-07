@@ -73,5 +73,9 @@ this.games = [
 
 </script>
 
+<style>
+
+</style>
+
 
 </game-list>

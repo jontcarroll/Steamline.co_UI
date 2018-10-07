@@ -36,7 +36,8 @@ let usePlumber = true;
 const component_folders = [
   'common',
   'nav-bar',
-  'game-finder'
+  'game-finder',
+  'login-form'
 ];
 
 function buildTaskBodyPerFolder(taskBody) {
@@ -54,7 +55,7 @@ function buildTaskBodyPerFolder(taskBody) {
  var styleSources = [ 
                       `${srcPaths.styles}all.scss`,
                       `${srcPaths.styles}css/**/*.css`
-                    ]
+                    ];
 
 gulp.task('styles', () => {
   return gulp.src(styleSources)

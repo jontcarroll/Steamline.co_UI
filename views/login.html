@@ -10,7 +10,7 @@
   <script src="/js/login-form.js?v={{ appVersion }}"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      var loginForm = new LoginForm(JSON.parse('{{ apiPaths|safe }}'), '{{ token }}');
+      var loginForm = new LoginForm(JSON.parse('{{ apiPaths|safe }}'));
     });
   </script>
 {% endblock %}

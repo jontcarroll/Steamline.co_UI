@@ -48,4 +48,12 @@ this.appliedFilters = [
 ];
 
 </script>
+
+    <style>
+        .applied-filters {
+            position:fixed;
+        }
+
+    </style>
+
 </applied-filters>

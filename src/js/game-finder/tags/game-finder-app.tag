@@ -37,9 +37,12 @@
         </footer>
 
         
-    <script>
+    <script type="es6">
         this.app = this.opts.app;
+        
 
 
     </script>
+
+
 </game-finder-app>

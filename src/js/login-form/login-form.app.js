@@ -1,26 +1,22 @@
 class LoginForm {
-  constructor(apiPaths, token) {
+  constructor(apiPaths) {
     this.baseUrl = apiPaths.auth;
     riot.observable(this);
 
-    if (!utils.isNullOrUndefined(token) && token.length != 0) {
+  /*   if (!utils.isNullOrUndefined(token) && token.length != 0) {
       Cookies.set(api.helpers.JWT_COOKIE_NAME, token);
       window.location = '/';
-    }
+    } */
 
     riot.mount('login-form', { app: this });
   }
 
   login(username, password) {
-    this.doLogin(username, password, 'backoffice/signin');
-  }
-
-  tenantLogin(username, password) {
-    this.doLogin(username, password, 'tenant/signin');
+    //this.doLogin(username, password, 'backoffice/signin');
   }
 
   doLogin(username, password, path) {
-    const axiosConfig = {
+/*     const axiosConfig = {
       url: `${this.baseUrl}/${path}`,
       method: 'post',
       data: {
@@ -52,6 +48,6 @@ class LoginForm {
 
         console.error(data);
       }
-    });
+    }); */
   }
 }
