@@ -2,18 +2,18 @@
 
     <div class="app-body">
 
-        <div class="sidebar">
+        <div class="sidebar sl-bg-dark">
 
             <side-bar app={ app }>
             </side-bar>
 
         </div>
         
-        <main class="main">
+        <main class="main sl-bg-dark">
             <applied-filters app = { app }>
             </applied-filters>
 
-            <div class="container-fluid">
+            <div class="container-fluid sl-bg-darker">
                 <div class="animated fadeIn">
                     <game-list app = { app }>
                     </game-list>
@@ -43,6 +43,5 @@
 
 
     </script>
-
 
 </game-finder-app>

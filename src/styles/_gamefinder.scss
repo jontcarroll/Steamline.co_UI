@@ -1,1 +1,45 @@
-@import "_gamefinder";
+.test{
+    background-color: red;
+}
+
+.sl-bg-darker {
+    background-color: #2e343a;
+}
+
+.sl-bg-dark { 
+    background-color: #3a4149;
+}
+
+.sl-no-outline:focus { 
+    outline: none;
+}
+
+.app-header {
+    border-bottom: 1px solid $primary;
+    top:0px;
+}
+
+.sl-card {
+    border:none;
+    border-radius: 0;
+    display:block;
+    width:100%;
+    height:120px;
+    overflow:hidden;
+}
+.sl-card-img {
+    height:120px;
+    width:261px;
+    background-size: 100%;
+}
+
+.sl-card-platforms {
+    position: absolute;
+    bottom:0px;
+    right:0px;
+    padding:8px;
+}
+    .sl-card-platforms .platform-icon {
+        padding-right:8px;
+        color: $primary;
+    }

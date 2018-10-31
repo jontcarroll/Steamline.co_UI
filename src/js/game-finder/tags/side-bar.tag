@@ -2,13 +2,16 @@
 
 <nav class="sidebar-nav">
     <ul class="nav">
-        <li class="nav-item">
+     <!--     <li class="nav-item">
             <a class="nav-link" href="index.html">
                 <i class="nav-icon icon-speedometer"></i> Dashboard
                 <span class="badge badge-primary">NEW</span>
             </a>
+        </li>  -->
+        <li class="nav-title">
+            <i class="fa fa-filter text-primary"></i>
+            &nbsp;Filters
         </li>
-        <li class="nav-title">Theme</li>
         <li class="nav-item">
             <a class="nav-link" href="colors.html">
                 <i class="nav-icon icon-drop"></i> Colors</a>
