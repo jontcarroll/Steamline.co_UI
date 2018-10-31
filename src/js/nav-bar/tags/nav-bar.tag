@@ -12,10 +12,10 @@
 <!--        <button class="navbar-toggler sidebar-toggler d-md-down-none sl-no-outline" type="button" data-toggle="sidebar-lg-show">
       
       </button>  -->
-        <button type="button" class="d-md-down-none tcon tcon-menu--arrow tcon-menu--arrowleft" aria-label="toggle menu" onclick={toggleSidebarLg}>
+   <!--       <button type="button" class="d-md-down-none tcon tcon-menu--arrow tcon-menu--arrowleft" aria-label="toggle menu" onclick={toggleSidebarLg}>
           <span class="tcon-menu__lines" aria-hidden="true"></span>
           <span class="tcon-visuallyhidden">toggle menu</span>
-        </button>
+        </button>  -->
 <!--        <ul class="nav navbar-nav d-md-down-none">
         <li class="nav-item px-3">
           <a class="nav-link" href="#">Dashboard</a>

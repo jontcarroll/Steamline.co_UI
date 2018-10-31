@@ -146,3 +146,14 @@ $brands-colors: map-merge((
   "foursquare":     $foursquare,
   "vimeo":          $vimeo
 ), $brands-colors);
+
+$sidebar-width:                       280px !default;
+$sidebar-padding:                     0 !default;
+$sidebar-minimized-width:             50px !default;
+$sidebar-minimized-height:            $sidebar-minimized-width !default;
+$sidebar-compact-width:               150px !default;
+$sidebar-compact-height:              $sidebar-compact-width !default;
+$sidebar-color:                       #fff !default;
+$sidebar-bg:                          $gray-800 !default;
+$sidebar-borders:                     none !default;
+$mobile-sidebar-width:                220px !default;

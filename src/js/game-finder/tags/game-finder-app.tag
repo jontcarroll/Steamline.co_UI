@@ -9,7 +9,7 @@
 
         </div>
         
-        <main class="main sl-bg-dark">
+        <main class="main sl-bg-dark sl-content">
             <applied-filters app = { app }>
             </applied-filters>
 
