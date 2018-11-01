@@ -3,20 +3,81 @@ class GameFinderApp {
       this.baseUrl = apiPaths.api;
       riot.observable(this);
 
-      this.filters = [];
+      this.preferences = [];
 
       this.getGames();
-      this.getFilters();
+      this.getPreferences();
 
       riot.mount('game-finder-app', { app: this });
     }
 
 
-    scoreGames() { 
+    scoreGames() {
+      for(let g = 0; g < this.games.length; g++) {
+        let game = this.games[g];
+        game.slScore = 0;
 
+
+      }
     }
-    
-    getFilters() {
+
+    likeCategory(category) {
+      if (category.preference.localPreference === -1) {
+        category.preference.localPreference = 1;
+        category.preference.likes+=1;
+        category.preference.dislikes-=1;
+      } else if (category.preference.localPreference === 1) {
+        category.preference.localPreference = 0;
+        category.preference.likes-=1;
+      } else if (category.preference.localPreference === 0) {
+        category.preference.localPreference = 1;
+        category.preference.likes+=1;
+      }
+    }
+
+    dislikeCategory(category) {
+      if (category.preference.localPreference === -1) {
+        category.preference.localPreference = 0;
+        category.preference.dislikes-=1;
+      } else if (category.preference.localPreference === 1) {
+        category.preference.localPreference = -1;
+        category.preference.likes-=1;
+        category.preference.dislikes+=1;
+      } else if (category.preference.localPreference === 0) {
+        category.preference.localPreference = -1;
+        category.preference.dislikes+=1;
+      }
+    }
+
+    likeGenre(genre) {
+      if (genre.preference.localPreference === -1) {
+        genre.preference.localPreference = 1;
+        genre.preference.likes+=1;
+        genre.preference.dislikes-=1;
+      } else if (genre.preference.localPreference === 1) {
+        genre.preference.localPreference = 0;
+        genre.preference.likes-=1;
+      } else if (genre.preference.localPreference === 0) {
+        genre.preference.localPreference = 1;
+        genre.preference.likes+=1;
+      }
+    }
+
+    dislikeGenre(genre) {
+      if (genre.preference.localPreference === -1) {
+        genre.preference.localPreference = 0;
+        genre.preference.dislikes-=1;
+      } else if (genre.preference.localPreference === 1) {
+        genre.preference.localPreference = -1;
+        genre.preference.likes-=1;
+        genre.preference.dislikes+=1;
+      } else if (genre.preference.localPreference === 0) {
+        genre.preference.localPreference = -1;
+        genre.preference.dislikes+=1;
+      }
+    }
+
+    getPreferences() {
       var categories = [];
       var genres = [];
       var platforms = [];
@@ -32,11 +93,15 @@ class GameFinderApp {
                 'id': category.id,
                 'description': category.description,
                 'count': 1,
-                'applied': true
+                'preference': {
+                  'likes': 0,
+                  'dislikes': 0,
+                  'localPreference': 0
+                }
               });
             } else {
               var existing = categories.find(x => x.id == category.id);
-              existing.count = existing.count + 1;
+              existing.count+=1;
             }
           }
         }
@@ -49,18 +114,22 @@ class GameFinderApp {
                 'id': genre.id,
                 'description': genre.description,
                 'count': 1,
-                'applied': true
+                'preference': {
+                  'likes': 0,
+                  'dislikes': 0,
+                  'localPreference': 0
+                }
               });
             } else {
               var existing = genres.find(x => x.id == genre.id);
-              existing.count = existing.count + 1;
+              existing.count+=1;
             }
           }
         }
       }
 
-      this.filters['categories'] = categories;
-      this.filters['genres'] = genres;
+      this.preferences['categories'] = categories;
+      this.preferences['genres'] = genres;
     }
 
 
