@@ -33,10 +33,11 @@ socket.open = (onMessage) => {
 
     socket.ws.onmessage = (event) => {
       console.log('=== SOCKET - ON MESSAGE ===');
+      var data = JSON.parse(event.data);
       var response = {
-          message: JSON.parse(event.data)
+          message: utils.isNullOrUndefined(data.Message) ? '' : JSON.parse(data.Message),
+          type: data.wsMessageType
       }
-      console.log(event);
       console.log('--- RESPONSE - ');
       console.log(response);
       onMessage(response);
@@ -50,7 +51,7 @@ socket.sendMessage = (params) => {
         console.log("Failed to send, socket is not open");
         return;
     }
-    let msg = JSON.stringify({type: params.type, response: params.message});
+    let msg = JSON.stringify({type: params.type, message: JSON.stringify(params.message)});
     console.log(msg);
     console.log('-------------------------');
     socket.ws.send(msg);

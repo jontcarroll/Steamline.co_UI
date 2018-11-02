@@ -20,9 +20,10 @@ class GameFinderApp {
     }
 
     wsOnMessage(response) {
-      if (response.message.wsMessageType === 'updatePreferences') {
+      if (response.type === 'updatePreferences') {
         this.trigger('preferencesUpdated', response.message);
       }
+
     }
 
     scoreGames() {
@@ -30,9 +31,22 @@ class GameFinderApp {
     }
 
     updatePreferences(preferences) {
-      this.preferences = preferences;
+      for(let i = 0; i < preferences.genres.length; i++) {
+        let newGenre = preferences.genres[i];
+        var localGenre = this.preferences.genres.find(x => x.id == newGenre.id);
+
+        localGenre.preference.likes = newGenre.preference.likes;
+        localGenre.preference.dislikes = newGenre.preference.dislikes;
+      }
+      for(let i = 0; i < preferences.categories.length; i++) {
+        let newCategory = preferences.categories[i];
+        var localCategory = this.preferences.categories.find(x => x.id == newCategory.id);
+
+        localCategory.preference.likes = newCategory.preference.likes;
+        localCategory.preference.dislikes = newCategory.preference.dislikes;
+      }
     }
-    
+
     likeCategory(category) {
       if (category.preference.localPreference === -1) {
         category.preference.localPreference = 1;

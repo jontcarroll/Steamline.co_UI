@@ -109,6 +109,7 @@
 
     this.updatePreferences = (preferences) => {
         this.app.updatePreferences(preferences);
+        this.preferences = this.app.preferences;
         this.update();
     }
     
