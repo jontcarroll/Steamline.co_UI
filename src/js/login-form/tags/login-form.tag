@@ -31,7 +31,6 @@
     this.errors = [];
 
     this.loginClick = () => {
-      console.log(this.refs.urlInput.value);
       this.app.login(this.refs.urlInput.value);
     }
 

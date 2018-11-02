@@ -4,6 +4,7 @@ const httpProxy = require('http-proxy');
 const app = express();
 const nunjucks = require('nunjucks');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
@@ -21,6 +22,7 @@ app.use(cookieParser());
 // const apiUrl = 'http://localhost:5000';
 
 const apiUrl = process.env.EXPRESS_API_URL;
+
 let apiProxyOpts = {};
 if (isDevelopment) {
   apiProxyOpts = {
@@ -73,6 +75,15 @@ app.get('/login', (req, res) => {
   res.render('login.html', vars);
 });
 
+function forwardApi(req, res) {
+  console.log(`fowarding auth traffic to ${apiUrl}`);
+  if (isDevelopment) {
+    req.headers['dynamic-builder-dev-host'] = 'mb.verizon.com.dev.epqa.us';
+  }
+  apiProxy.web(req, res, { target: apiUrl });
+}
+app.all('/api/*', forwardApi);
+
 /* app.get('/login', (req, res) => {
     const token = req.query.token;
     vars = getBaseVars();
@@ -81,13 +92,7 @@ app.get('/login', (req, res) => {
 });
 
 \
-function forwardApi(req, res) {
-  console.log(`fowarding auth traffic to ${apiUrl}`);
-  if (isDevelopment) {
-    req.headers['dynamic-builder-dev-host'] = 'mb.verizon.com.dev.epqa.us';
-  }
-  apiProxy.web(req, res, { target: apiUrl });
-}
+
 
 /**
  * Adds the JWT Token from the cookie to the request headers if it exists.
@@ -125,5 +130,10 @@ app.all('/backoffice/*', addAuthorizationTokenToRequest);
 app.all('/backoffice/*', forwardApi); */
 
 app.use(express.static('static'));
+app.use(bodyParser.json({limit: '150mb'}));
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+    limit: '150mb',
+    extended: true
+})); 
 
 app.listen(serverPort, () => console.log(`${isDevelopment ? 'DEVELOPMENT' : 'PRODUCTION'} Server listening on port ${serverPort}.`));

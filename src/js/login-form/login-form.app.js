@@ -1,19 +1,38 @@
 class LoginForm {
   constructor(apiPaths) {
-    this.baseUrl = apiPaths.auth;
+    this.baseUrl = apiPaths.api;
+    console.log(this.baseUrl);
     riot.observable(this);
+    this.steamId = null;
 
-    const steamUrl = Cookies.get(api.helpers.STEAM_URL_COOKIE_NAME);
+/*     const steamUrl = Cookies.get(api.helpers.STEAM_URL_COOKIE_NAME);
     if (!utils.isNullOrUndefined(steamUrl) && steamUrl.length != 0) {
       Cookies.set(api.helpers.STEAM_URL_COOKIE_NAME, steamUrl);
       window.location = '/';
     }
-
+ */
     riot.mount('login-form', { app: this });
   }
 
   login(steamUrl) {
-    this.doLogin(steamUrl);
+    this.getSteamId(steamUrl);
+  }
+
+  getSteamId(steamUrl) {
+    const axiosConfig = {
+      url: encodeURI(`${this.baseUrl}/gamefinder/getSteamIdFromProfileUrl?url=${steamUrl}`),
+      method: 'get'
+    };
+
+    axios(axiosConfig).then(resp => {
+      console.log(resp.data);
+      this.steamId = resp.data;
+      Cookies.set(api.helpers.STEAM_URL_COOKIE_NAME, this.steamId);
+      window.location = "/";
+    }).catch(error => {
+      console.log(error);
+      alert('error');
+    })
   }
 
   doLogin(steamUrl) {

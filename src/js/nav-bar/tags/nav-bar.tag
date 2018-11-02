@@ -34,7 +34,7 @@
             <span class="badge badge-pill badge-danger">5</span>
           </a>
         </li>
-        <li class="nav-item d-md-down-none">
+        <li class="nav-item d-md-down-none" onclick={logout}>
           <a class="nav-link" href="#">
             <i class="icon-list"></i>
           </a>
@@ -101,14 +101,14 @@
   </style>
 
   <script type="es6">
-    const app = this.opts.app;
-    this.app = app;
+    this.app = this.opts.app;
     this.showSidebarLg = false;
     this.showSidebarSm = false;
 
     this.logout = (e) => {
+      console.log(this.opts);
       e.preventDefault(); 
-      app.logout();
+      this.app.logOut();
     };
 
     this.toggleSidebarSm = (e) => {
@@ -128,12 +128,6 @@
         document.body.classList.remove('sidebar-lg-show');
         this.showSidebarLg = false;
       }
-    }
-
-    this.onTenantChange = (e) => {
-      const tenantId = e.target.value;
-
-      app.setTenant(tenantId);
     }
 
     this.on('mount', () => {

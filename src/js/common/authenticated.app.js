@@ -4,6 +4,7 @@ class Authenticated {
     const steamUrl = Cookies.get(api.helpers.STEAM_URL_COOKIE_NAME);
     if (utils.isNullOrUndefined(steamUrl)) {
       console.error('could not find steam url');
+      
       window.location = '/login';
       return;
     }
@@ -28,7 +29,7 @@ class Authenticated {
     Cookies.set(api.helpers.JWT_COOKIE_NAME, token);
   }
 
-  getUser() {
+/*   getUser() {
     const token = Cookies.get(api.helpers.JWT_COOKIE_NAME);
 
     if (utils.isNullOrUndefined(token)) {
@@ -49,7 +50,7 @@ class Authenticated {
       currentTenant: tokenObj.txref,
     };
   }
-
+ */
   signout() {
     Cookies.remove(api.helpers.JWT_COOKIE_NAME, '');
     window.location = '/login';
