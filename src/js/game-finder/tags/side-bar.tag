@@ -106,10 +106,18 @@
         this.app.dislikeGenre(genre);
         this.update();
     }
+
+    this.updatePreferences = (preferences) => {
+        this.app.updatePreferences(preferences);
+        this.update();
+    }
     
     this.on('mount', () => {
-
+        this.app.on('preferencesUpdated', this.updatePreferences);
     });
+    this.on('unmount', () => {
+        this.app.on('preferencesUpdated', this.updatePreferences);
+    })
 </script>
 
 </side-bar>
