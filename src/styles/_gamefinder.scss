@@ -47,13 +47,20 @@
     border-radius: 0;
     display:block;
     width:100%;
-    height:120px;
+    height:129px;
     overflow:hidden;
 }
+
+.card-body {
+    margin-left:15px;
+}
+
 .sl-card-img {
-    height:120px;
-    width:261px;
-    background-size: 100%;
+    min-height:129px;
+    min-width:276px;
+    max-height:129px;
+    max-width:276px;
+    background-size: 276px 129px;
 }
 
 .sl-card-platforms {
