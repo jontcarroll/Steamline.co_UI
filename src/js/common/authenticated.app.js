@@ -1,7 +1,13 @@
 class Authenticated {
   constructor() {
 
-
+    const steamUrl = Cookies.get(api.helpers.STEAM_URL_COOKIE_NAME);
+    if (utils.isNullOrUndefined(steamUrl)) {
+      console.error('could not find steam url');
+      window.location = '/login';
+      return;
+    }
+    
     return {
       jti: "",
       username: "",

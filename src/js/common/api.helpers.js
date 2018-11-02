@@ -60,5 +60,6 @@ api.helpers.complexParams = (axiosConfig) => {
   return axiosConfig;
 };
 
+api.helpers.STEAM_URL_COOKIE_NAME = 'sl_steamurl';
 api.helpers.JWT_COOKIE_NAME = 'jwt_token';
 api.helpers.XSRF_COOKIE_NAME = 'X-XSRF';

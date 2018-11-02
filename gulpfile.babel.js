@@ -37,7 +37,8 @@ const component_folders = [
   'common',
   'nav-bar',
   'game-finder',
-  'login-form'
+  'login-form',
+  'vendor'
 ];
 
 function buildTaskBodyPerFolder(taskBody) {

@@ -14,14 +14,13 @@
                         <small>{ short_description }</small>
                     </div>
                 </div>
-        
-                <div class="sl-card-score">
-                    <strong class="text-primary">100%</strong>
+                <div class="sl-card-hide">
+                    <div class="sl-card-hide-btn"></div>
                 </div>
                 <div class="sl-card-platforms">
-                    <i if = {platforms.windows} class="fab fa-windows platform-icon"></i>
-                    <i if = {platforms.mac}  class="fab fa-linux platform-icon"></i>
-                    <i if = {platforms.linux}  class="fab fa-apple platform-icon"></i>
+                    <i if = {platforms && platforms.windows} class="fab fa-windows platform-icon"></i>
+                    <i if = {platforms && platforms.mac}  class="fab fa-linux platform-icon"></i>
+                    <i if = {platforms && platforms.linux}  class="fab fa-apple platform-icon"></i>
                 </div>
             </div>
         </div>

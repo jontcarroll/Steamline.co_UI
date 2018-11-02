@@ -7,7 +7,7 @@
 }
 
 .sl-bg-dark { 
-    background-color: #3a4149;
+    background-color: $dark;
 }
 
 .sl-no-outline:focus { 
@@ -17,6 +17,27 @@
 .app-header {
     border-bottom: 1px solid $primary;
     top:0px;
+}
+
+
+.sl-input {
+    background-color: $dark;
+    color: $white;
+}
+.sl-input:focus {
+    background-color: $dark;
+}
+
+.sl-login-form-container {
+
+}
+
+.sl-login-form-container.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 }
 
 .sl-sidebar-nav {}
@@ -51,17 +72,33 @@
     top: 0px;
     right: 0px;
     padding: 10px;
+    padding-top:0px;
+    padding-right:0px;
 }
 
-.sl-preference-btn {
-    padding: 0.15rem 0.25rem;
-    font-size: 0.5rem;
-    line-height: 1.5;
-    border-radius: 0.2rem;
+.sl-card-hide {
+    width:75px;
+    text-align: center;
+    display:block;
+    position:absolute;
+    top:0px;
+    right:0px;
 }
-.sl-preference-btn:focus {
-    box-shadow: none;
+.sl-card-hide .sl-card-hide-btn {
+  
+    color: $secondary;
+    padding:10px;
 }
+    .sl-card-hide .sl-card-hide-btn:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 400;
+        font-size: 3rem;
+        content: "\f057";
+    }
+    .sl-card-hide .sl-card-hide-btn:hover {
+        color: $danger;
+        cursor: pointer;
+    }
 
 
 .sl-filter-group {
@@ -82,42 +119,14 @@
         overflow: hidden;
     }
 
-  
-
-    .sl-filter-group-item.preference-meh:after {
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        content: "\f11a";
-        color: $secondary;
-        width: 100%;
-    }
-        .sl-filter-group-item.preference-meh:hover {
-            border-top: 1px solid $secondary;
-            border-bottom: 1px solid $secondary;
-            cursor:pointer;
-        }
-
-    .sl-filter-group-item.preference-like:before {
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        content: "\f584";
-        color: $primary;
-    }
-        .sl-filter-group-item.preference-like:hover {
-         /*    border-top: 1px solid $primary;
-            border-bottom: 1px solid $primary; */
-            box-shadow: 0px 30px 40px rgba(0,0,0,.1);
-            cursor:pointer;
-        }
-
-    .sl-filter-group-item.preference-dislike:before {
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        content: "\f119";
-        color: $danger;
-    }
-        .sl-filter-group-item.preference-dislike:hover {
-            border-top: 1px solid $danger;
-            border-bottom: 1px solid $danger;
-            cursor:pointer;
-        }
+.sl-preference-btn {
+    padding: 0.15rem 0.25rem;
+    font-size: 0.5rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+.sl-preference-btn:focus {
+    box-shadow: none;
+}
+    
+    

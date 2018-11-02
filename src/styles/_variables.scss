@@ -16,6 +16,7 @@ $gray-700:  #5c6873 !default; // lighten($gray-base, 30%);
 $gray-800:  #2f353a !default; // lighten($gray-base, 10%);
 $gray-900:  #23282c !default; // lighten($gray-base, 5%);
 $black:     #000 !default;
+$sl-dark:      #3a4149 !default;
 
 $grays: () !default;
 $grays: map-merge(
@@ -72,7 +73,7 @@ $info:          $light-blue !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-700 !default;
+$dark:          $sl-dark !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(

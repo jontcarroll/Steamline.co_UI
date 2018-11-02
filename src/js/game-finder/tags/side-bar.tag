@@ -106,7 +106,7 @@
         this.app.dislikeGenre(genre);
         this.update();
     }
-
+    
     this.on('mount', () => {
 
     });

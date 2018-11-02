@@ -3,19 +3,24 @@ class LoginForm {
     this.baseUrl = apiPaths.auth;
     riot.observable(this);
 
-  /*   if (!utils.isNullOrUndefined(token) && token.length != 0) {
-      Cookies.set(api.helpers.JWT_COOKIE_NAME, token);
+    const steamUrl = Cookies.get(api.helpers.STEAM_URL_COOKIE_NAME);
+    if (!utils.isNullOrUndefined(steamUrl) && steamUrl.length != 0) {
+      Cookies.set(api.helpers.STEAM_URL_COOKIE_NAME, steamUrl);
       window.location = '/';
-    } */
+    }
 
     riot.mount('login-form', { app: this });
   }
 
-  login(username, password) {
-    //this.doLogin(username, password, 'backoffice/signin');
+  login(steamUrl) {
+    this.doLogin(steamUrl);
   }
 
-  doLogin(username, password, path) {
+  doLogin(steamUrl) {
+    if (!utils.isNullOrUndefined(steamUrl) && steamUrl.length > 0) {
+      Cookies.set(api.helpers.STEAM_URL_COOKIE_NAME, steamUrl);
+      window.location = '/';
+    }
 /*     const axiosConfig = {
       url: `${this.baseUrl}/${path}`,
       method: 'post',
