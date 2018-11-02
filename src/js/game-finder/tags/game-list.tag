@@ -6,9 +6,7 @@
         <div if = { !filtered } class="card sl-card text-white sl-bg-dark mt-4 mb-0">
             <div class="card-body p-0">
                 <div class="row">
-                    <div class="col-md-2 sl-card-img" style="background-image: url('{header_image}')">
-                        <div class="sl-card-img"></div>
-                    </div>
+                    <div class="col-md-2 sl-card-img" style="background-image: url('{header_image}')"></div>
                     <div class="col-md-5">
                         <div class="text-value">{ name }</div>
                         <small>{ short_description }</small>
