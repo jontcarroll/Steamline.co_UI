@@ -1,0 +1,57 @@
+{
+    "deploy": {
+        "packages": [
+            {
+                "name": "Version 0.0.1",
+                "description": "Package version 0.0.1",
+                "files": [
+                    "views/**",
+                    "static/**",
+                    "app.js",
+                    "package-lock.json",
+                    "package.json"
+                ],
+                "deployOnSave": true,
+                "button": {
+                    "text": "Deploy to 'My target'",
+                    "tooltip": "Click here to deploy to the target...",
+
+                    "targets": [ "RPI - Vollnov.com" ]
+                }
+            }
+        ],
+        "targets": [
+            {
+                "type": "sftp",
+                "name": "Steamline UI",
+                "description": "Steamline UI",
+
+                "dir": "/var/express/steamline.co",
+                "host": "vollnov.com", "port": 22,
+                "user": "pi", "password": "",
+                "connected": [
+                    "sudo rm -r /var/express/steamline.co/static/**",
+                    "sudo rm -r /var/express/steamline.co/views/**",
+                    "sudo rm /var/express/steamline.co/package.json",
+                    "sudo rm /var/express/steamline.co/package-lock.json",
+                    "sudo rm /var/express/steamline.co/app.js",
+                    "",
+                    {
+                        "command": "whoami",
+                        "writeOutputTo": "current_bash_user",
+                        "executeBeforeWriteOutputTo": "$others['current_bash_user'].trim()"
+                    }
+                ],
+                "closing": [
+                    "",
+                ],
+                "mappings": [
+                    {
+                        "source": "/",
+                        "target": "/"
+                    }
+                ]
+            }
+        ]
+    }
+}
