@@ -30,12 +30,12 @@
                 "host": "vollnov.com", "port": 22,
                 "user": "pi", "password": "",
                 "connected": [
+                    "sudo systemctl stop steamline-express.service",
                     "sudo rm -r /var/express/steamline.co/static/**",
                     "sudo rm -r /var/express/steamline.co/views/**",
                     "sudo rm /var/express/steamline.co/package.json",
                     "sudo rm /var/express/steamline.co/package-lock.json",
                     "sudo rm /var/express/steamline.co/app.js",
-                    "",
                     {
                         "command": "whoami",
                         "writeOutputTo": "current_bash_user",
@@ -43,7 +43,7 @@
                     }
                 ],
                 "closing": [
-                    "",
+                    "sudo systemctl start steamline-express.service",
                 ],
                 "mappings": [
                     {

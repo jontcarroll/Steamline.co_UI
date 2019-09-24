@@ -1,7 +1,7 @@
 {
-  "name": "mb-workflow",
+  "name": "steamline_ui",
   "version": "1.0.0",
-  "description": "Marketing Builder workflow creation tool.",
+  "description": "Steamline UI Repository",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://LoganJenkins@bitbucket.org/epinteractiv/dynamicbuilder.admin.git"
+    "url": "git+https://github.com/jontcarroll/Steamline.co_UI.git"
   },
   "author": "EP+Co",
   "contributors": [
-    "Logan Jenkins <logan.jenkins@epandcompany.com>",
-    "Dan Alexander <dan.alexander@epandcompany.com>"
+    "Justin Carroll <jcarroll@dyadsoftware.com>",
+    "Jon Carroll <jon@dyadsoftware.com>"
   ],
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/epinteractiv/dynamicbuilder.admin#readme",
+  "homepage": "https://github.com/jontcarroll/Steamline.co_UI",
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-preset-es2015": "6.24.1",
